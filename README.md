@@ -4,12 +4,13 @@ A Next.js 14 App Router project with full authentication system using NextAuth.j
 
 ## 🚀 Features
 
-- ✅ **Google OAuth 2.0 Login** - Authenticate using Google
+- ✅ **Google OAuth 2.0 Login & Signup** - Authenticate using Google across all pages
 - ✅ **Manual Registration & Login** - Email/password with bcrypt hashing
 - ✅ **JWT-based Sessions** - Stateless authentication
 - ✅ **Protected Routes** - Middleware-protected dashboard
 - ✅ **In-memory User Storage** - No database required for development
 - ✅ **TypeScript Support** - Full type safety
+- ✅ **Reusable Components** - Modular Google OAuth button component
 
 ## 🛠 Tech Stack
 

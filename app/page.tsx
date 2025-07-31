@@ -3,6 +3,7 @@
 import React from 'react'
 import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
+import GoogleOAuthButton from '@/components/GoogleOAuthButton'
 
 export default function Home() {
   const { data: session, status } = useSession()
@@ -10,6 +11,8 @@ export default function Home() {
   const handleSignOut = () => {
     signOut({ callbackUrl: '/' })
   }
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -89,6 +92,10 @@ export default function Home() {
               </>
             ) : (
               <>
+                <GoogleOAuthButton 
+                  text="Quick Start with Google"
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors flex items-center justify-center"
+                />
                 <Link
                   href="/register"
                   className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors"

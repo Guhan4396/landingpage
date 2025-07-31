@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import GoogleOAuthButton from '@/components/GoogleOAuthButton'
 
 export default function RegisterPage() {
   const [name, setName] = useState('')
@@ -44,6 +45,8 @@ export default function RegisterPage() {
     }
   }
 
+
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -62,7 +65,23 @@ export default function RegisterPage() {
           </p>
         </div>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <div className="mt-8 space-y-6">
+          {/* Google OAuth Button */}
+          <div>
+            <GoogleOAuthButton text="Sign up with Google" />
+          </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-gray-50 text-gray-500">Or continue with</span>
+            </div>
+          </div>
+
+          {/* Email/Password Form */}
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
             <div className="rounded-md bg-red-50 p-4">
               <div className="text-sm text-red-700">{error}</div>
@@ -136,6 +155,7 @@ export default function RegisterPage() {
             </button>
           </div>
         </form>
+        </div>
       </div>
     </div>
   )
